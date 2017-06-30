@@ -23,8 +23,8 @@ namespace SimilarImages
         }
         OpenFileDialog openDialog1 = new OpenFileDialog();
 
-        DirectoryInfo directoryInfo = new DirectoryInfo(@"C:\Users\salcac\Desktop\TEST");
-        string FilePath = @"C:\Users\salcac\Desktop\Results\Results 6x6+Sobel.txt";
+        DirectoryInfo directoryInfo = new DirectoryInfo(@"..\..\..\Imagini");
+        string FilePath = @"..\..\..\Results\Results 6x6+Sobel.txt";
 
         #region Butoane
         private void Button_DeschideImaginea(object sender, RoutedEventArgs e)
