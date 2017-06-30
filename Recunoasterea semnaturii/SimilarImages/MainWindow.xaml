@@ -1,0 +1,67 @@
+﻿<Window x:Class="SimilarImages.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimilarImages"
+        mc:Ignorable="d"
+        Title="Recunoașterea semnăturii" Height="650" Width="1025"
+        Name="mainWind">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="20" Name="row0"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Trăsături imagini format 6x6 concatenat cu Sobel aplicat pe formatul 6x6" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="16" Foreground="Red"/>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="169*"/>
+                <ColumnDefinition Width="848*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"  >
+                <Button Content="Deschide Imaginea" Click="Button_DeschideImaginea" Name="btnDeschideImaginea" />
+                <TextBlock Height="10"/>
+                <Button Content="Caută Semnături" Click="Button_CautăSemnături" IsEnabled="False" Name="btnCautăSemnături"  />
+                <TextBlock Height="15"/>
+                <Button Content="Creare Vectori" Click="Button_CreareVectori" Name="btnCreareVectori" />
+                <TextBlock Height="10"/>
+                <Button Content="Scriere Fișier" Click="Button_ScriereFișier" Name="btnScriereFișier" IsEnabled="False" />               
+            </StackPanel>
+
+            <Image Name="InputImg" HorizontalAlignment="Center" Grid.Row="0"  Grid.Column="1"  />
+            <Label Name="lblInputImg" Content="Imaginea de intrare" Grid.Row="0"  Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden"  />
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="173*"/>
+                    <ColumnDefinition Width="172*"/>
+                    <ColumnDefinition Width="172*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Name="FirstImg" Grid.Column="0" />
+                <Label Name="lblFirstImg" Grid.Column="0" Content="Prima alegere" HorizontalAlignment="Center" Visibility="Hidden"/>
+                <Rectangle Name="rctFistImg" Grid.Column="0" VerticalAlignment="Bottom" Fill="Gray" Height="20" Visibility="Hidden"/>
+                <TextBlock Name="txtFristImg" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+                <Image Name="SecondImg" Grid.Column="1" />
+                <Label Name="lblSecondImg" Grid.Column="1" Content="A doua alegere" HorizontalAlignment="Center" Visibility="Hidden"/>
+                <Rectangle Name="rctSecondImg" Grid.Column="1" VerticalAlignment="Bottom" Fill="Gray" Height="20" Visibility="Hidden" />
+                <TextBlock Name="txtSecondImg" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+                <Image Name="ThirdImg" Grid.Column="2" />
+                <Label Name="lblThirdImg" Grid.Column="2" Content="A treia alegere" HorizontalAlignment="Center" Visibility="Hidden" />
+                <Rectangle Name="rctThirdImg" Grid.Column="2" VerticalAlignment="Bottom" Fill="Gray" Height="20" Visibility="Hidden" />
+                <TextBlock Name="txtThirdImg" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
