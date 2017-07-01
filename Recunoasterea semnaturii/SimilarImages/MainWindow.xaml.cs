@@ -160,6 +160,7 @@ namespace SimilarImages
         }
         public double[] CreateVectorBlackPixels(Bitmap img)
         {
+            //Sursa : https://stackoverflow.com/questions/13625891/cut-an-image-into-9-pieces-c-sharp
             var imgarray = new Bitmap[36];
             for (int i = 0; i < 6; i++)
             {
@@ -206,6 +207,7 @@ namespace SimilarImages
         }
         private int BlackPixelsNumber(Bitmap img)
         {
+            //Sursa : http://csharphelper.com/blog/2016/10/count-pixels-of-different-colors-in-c/
             int blackPixels = 0;
             for (int i = 0; i < img.Height; i++)
             {
